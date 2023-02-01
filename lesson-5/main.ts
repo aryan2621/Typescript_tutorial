@@ -34,11 +34,11 @@ let loginUser = (name: string, email: string, isPaid: boolean = false) => {
 loginUser("John", "a@a.com");
 // isPaid is optional you can put default value
 
-// For making sure the dataType which is returning use syntax 
+// For making sure the dataType which is returning use syntax
 
-// function fName(p1:DataType1,p2:DataTyp2): dataType 
+// function fName(p1:DataType1,p2:DataTyp2): dataType
 
-function responseFromAPI(num: number) : boolean | string {
+function responseFromAPI(num: number): boolean | string {
     if (num > 10) {
         return true;
     }
@@ -46,5 +46,26 @@ function responseFromAPI(num: number) : boolean | string {
 }
 
 console.log(responseFromAPI(11));
+
+const heroes = ["Batman", "Superman", "Spiderman", "Ironman", "Thor"];
+
+heroes.map((hero) => {
+    console.log(hero);
+});
+
+const heroId = [1, 2, 3, 4];
+heroId.map((id) => {
+    console.log(id);
+    return `id is ${id}`;
+});
+
+function handleError(err: string): never {
+    throw new Error(err);
+    // never means it will never return anything
+    // It is used when we are sure that the function will never return anything
+}
+function consoleError(err: string): void {
+    console.log(err);
+}
 
 export { };
