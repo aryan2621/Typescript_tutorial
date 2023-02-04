@@ -67,3 +67,59 @@ class Sellable {
         this.cart.push(product);
     }
 }
+const quiz = new Sellable();
+quiz.addProduct({
+    name: "Quiz 1",
+    type: "quiz",
+});
+// narrow down the type of the variable
+function detectType(val) {
+    if (typeof val === "string") {
+        return val.toUpperCase();
+    }
+    else {
+        return val.toFixed(2);
+    }
+}
+function provideId(id) {
+    if (!id) {
+        return "No ID";
+    }
+    return id.toUpperCase();
+}
+function printAll(strs) {
+    if (strs && typeof strs === "object") {
+        for (const s of strs) {
+            console.log(s);
+        }
+    }
+    else if (strs && typeof strs === "string") {
+        console.log(strs);
+    }
+}
+function printUser(user) {
+    console.log(user.name);
+    if ("isAdmin" in user) {
+        console.log("user.isAdmin", user.isAdmin);
+    }
+}
+function logValue(x) {
+    if (x instanceof Date) {
+        // instance of is used to check the type of the object
+        console.log(x.toUTCString());
+    }
+    else {
+        console.log(x.toUpperCase());
+    }
+}
+function isFish(pet) {
+    return pet.swim !== undefined;
+}
+function getFood(pet) {
+    if (isFish(pet)) {
+        pet;
+        return pet.foodIs("fish");
+    }
+    pet;
+    return pet.foodIs("bird");
+}
